@@ -1,0 +1,4 @@
+#Check last time applications were run 
+
+Get-ChildItem -Path ${env:ProgramFiles(x86)} -Filter "*.exe" -Recurse |
+Get-ItemProperty | select name,lastaccesstime | sort -Property lastaccesstime
